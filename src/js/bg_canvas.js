@@ -9,11 +9,11 @@ function bg_canvas() {
       // параметры
       const OPTS = {
         particle_color: "rgb(200, 200, 200)",
-        line_color: ["#ffffff", "#ccccef", "#f7d5d9", "#f5f9c0", "#f1f98b", "#f9c9c4", "#c4f7f9", "#a7f8fb", "#f9c4f2", "#d8f9c4"],
+        line_color: ["rgba(255, 255, 255, 0.3)", "rgba(204, 204, 239, 0.3)", "rgba(247, 213, 217, 0.3)", "rgba(245, 249, 192, 0.3)", "rgba(241, 249, 139, 0.3)", "rgba(249, 201, 196, 0.3)", "rgba(196, 247, 249, 0.3)", "rgba(167, 248, 251, 0.3)", "rgba(249, 196, 242, 1)", "rgba(216, 249, 196, 0.3)"],
         default_speed: 0.02,
         variant_speed: 0.02,
         default_radius: 1,
-        variant_radius: 0.1,
+        variant_radius: 0.001,
         link_radius: 2000
       }
 
@@ -21,7 +21,7 @@ function bg_canvas() {
       Particle = function (x_pos, y_pos) {
         // получаем рандомные точки координат
         this.x = Math.random() * w;
-        this.y = Math.random() * h;
+        this.y = (Math.random() * (h-100 -100)) + 100;
         // скорость анимации точки
         this.speed = OPTS.default_speed + Math.random() * OPTS.variant_speed;
         // 
@@ -96,7 +96,8 @@ function bg_canvas() {
         resizeReset();
         // в цикле создаем звезды из расчета одна площадь 90х90
         // не сильно много всегда и не сильно мало
-        for (var i = 0; i < Math.ceil(w / 90 * h / 90); i++) {
+        console.log(Math.ceil(w / 95 * h / 95))
+        for (var i = 0; i < Math.ceil(w / 95 * h / 95); i++) {
           particles.push(new Particle());
         }
         window.requestAnimationFrame(loop);
