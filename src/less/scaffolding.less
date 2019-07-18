@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: aliceblue;
+}
+
+img {
+  max-width: 100%;
+}
+
+.bg_canvas--js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #03010a;
+  background-image: radial-gradient(circle at 50% 99%, #151531, #03010a);
+
+  @media (min-width: @min-md) {
+    background-image: url("../img/cloud.png"), radial-gradient(circle at 50% 99%, #151531, #03010a);
+    background-position: 30vw -17%,
+    center bottom;
+    background-size: 600px auto,
+    cover;
+    background-repeat: repeat-x, no-repeat;
+  }
+  
+  margin: 0;
+  box-sizing: border-box;
+}
