@@ -1,3 +1,19 @@
 header {
-  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100vw;
+  min-height: 100px;
+  background-image: url("../img/cloud@575.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  
+  @media (min-width: @min-sm) {
+    background-image: url("../img/cloud@990.png");
+  }
+
+  @media (min-width: @min-lg) {
+    background-image: url("../img/cloud@1250.png");
+  }
 }

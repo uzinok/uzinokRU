@@ -8,7 +8,7 @@ function bg_canvas() {
 
       // параметры
       const OPTS = {
-        particle_color: ["rgba(204, 204, 239, 0.6)", "rgba(247, 213, 217, 0.6)", "rgba(255, 255, 255, 0.3)", "rgba(245, 249, 192, 0.6)", "rgba(241, 249, 139, 0.6)", "rgba(249, 201, 196, 0.6)", "rgba(196, 247, 249, 0.6)", "rgba(167, 248, 251, 0.6)", "rgba(249, 196, 242, 0.6)", "rgba(216, 249, 196, 0.6)"],
+        particle_color: ["rgba(204, 204, 239, 0.4)", "rgba(247, 213, 217, 0.4)", "rgba(255, 255, 255, 0.4)", "rgba(245, 249, 192, 0.4)", "rgba(241, 249, 139, 0.4)", "rgba(249, 201, 196, 0.4)", "rgba(196, 247, 249, 0.4)", "rgba(167, 248, 251, 0.4)", "rgba(249, 196, 242, 0.4)", "rgba(216, 249, 196, 0.4)"],
         default_speed: 0.02,
         variant_speed: 0.02,
         default_radius: 0.6,
@@ -19,7 +19,7 @@ function bg_canvas() {
       Particle = function (x_pos, y_pos) {
         // получаем рандомные точки координат
         this.x = Math.random() * w;
-        this.y = (Math.random() * (h - 100 - 100)) + 100;
+        this.y = (Math.random() * (h - 50));
         // скорость анимации точки
         this.speed = OPTS.default_speed + Math.random() * OPTS.variant_speed;
         // для более разлиного вектора изменения радиуса
@@ -56,16 +56,15 @@ function bg_canvas() {
           ctx.closePath();
           // определяем цвет заливки
           ctx.fillStyle = this.color;
-          // заливаем точку
-          ctx.fill();
-
-
+          // определяем цвет свечения
           ctx.shadowColor = this.color;
+          // определяем смещение свечения
           ctx.shadowOffsetX = 0;
           ctx.shadowOffsetY = 0;
+          // разме4 свечения
           ctx.shadowBlur = 5;
-
-          
+          // заливаем точку
+          ctx.fill();
 
         }
       }
@@ -119,7 +118,7 @@ function bg_canvas() {
           // отрисовка с новыми координатами
           particles[i].draw();
           ctx.beginPath();
-          
+
         }
       }
 
