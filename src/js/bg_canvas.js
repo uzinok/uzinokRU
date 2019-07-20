@@ -8,34 +8,31 @@ function bg_canvas() {
 
       // параметры
       const OPTS = {
-        particle_color: "rgb(200, 200, 200)",
-        line_color: ["rgba(255, 255, 255, 0.3)", "rgba(204, 204, 239, 0.3)", "rgba(247, 213, 217, 0.3)", "rgba(245, 249, 192, 0.3)", "rgba(241, 249, 139, 0.3)", "rgba(249, 201, 196, 0.3)", "rgba(196, 247, 249, 0.3)", "rgba(167, 248, 251, 0.3)", "rgba(249, 196, 242, 1)", "rgba(216, 249, 196, 0.3)"],
+        particle_color: ["rgba(204, 204, 239, 0.6)", "rgba(247, 213, 217, 0.6)", "rgba(255, 255, 255, 0.3)", "rgba(245, 249, 192, 0.6)", "rgba(241, 249, 139, 0.6)", "rgba(249, 201, 196, 0.6)", "rgba(196, 247, 249, 0.6)", "rgba(167, 248, 251, 0.6)", "rgba(249, 196, 242, 0.6)", "rgba(216, 249, 196, 0.6)"],
         default_speed: 0.02,
         variant_speed: 0.02,
-        default_radius: 1,
-        variant_radius: 0.001,
-        link_radius: 2000
+        default_radius: 0.6,
+        variant_radius: 0.001
       }
 
       // отрисовка точки
       Particle = function (x_pos, y_pos) {
         // получаем рандомные точки координат
         this.x = Math.random() * w;
-        this.y = (Math.random() * (h-100 -100)) + 100;
+        this.y = (Math.random() * (h - 100 - 100)) + 100;
         // скорость анимации точки
         this.speed = OPTS.default_speed + Math.random() * OPTS.variant_speed;
-        // 
+        // для более разлиного вектора изменения радиуса
         this.direction_angle = Math.floor(Math.random() * 360);
         // цвет точки
-        // this.color = OPTS.particle_color;
-        this.color = OPTS.line_color[Math.ceil(Math.random() * 10)];
+        this.color = OPTS.particle_color[Math.ceil(Math.random() * 10)];
         // рандомный радиус точки
         this.radius = OPTS.default_radius + Math.random() * OPTS.variant_radius;
-        // изменение координат по синусу и косинусу
+        // на сколько изменяется радиус точки 
         this.vector = {
-          radius: Math.abs(Math.sin(this.direction_angle) * this.speed)
+          radius: Math.sin(this.direction_angle) * this.speed
         }
-        // обновление координат точки
+        // обновление радиуса
         this.update = function () {
           // ограничиваем радиус
           this.border();
@@ -45,7 +42,7 @@ function bg_canvas() {
         // ограничение радиуса
         this.border = function () {
           // если точка больше/меньше нужного - меняем направление изменения радиуса
-          if (this.radius >= 2 || this.radius <= 1) {
+          if (this.radius >= 1.5 || this.radius <= 0.5) {
             this.vector.radius *= -1;
           }
         }
@@ -61,6 +58,15 @@ function bg_canvas() {
           ctx.fillStyle = this.color;
           // заливаем точку
           ctx.fill();
+
+
+          ctx.shadowColor = this.color;
+          ctx.shadowOffsetX = 0;
+          ctx.shadowOffsetY = 0;
+          ctx.shadowBlur = 5;
+
+          
+
         }
       }
 
@@ -94,9 +100,8 @@ function bg_canvas() {
         particles = [];
         // задаем ширину
         resizeReset();
-        // в цикле создаем звезды из расчета одна площадь 90х90
+        // в цикле создаем звезды из расчета одна площадь 95х95
         // не сильно много всегда и не сильно мало
-        console.log(Math.ceil(w / 95 * h / 95))
         for (var i = 0; i < Math.ceil(w / 95 * h / 95); i++) {
           particles.push(new Particle());
         }
@@ -113,6 +118,8 @@ function bg_canvas() {
           particles[i].update();
           // отрисовка с новыми координатами
           particles[i].draw();
+          ctx.beginPath();
+          
         }
       }
 
@@ -123,7 +130,7 @@ function bg_canvas() {
       // \scripts bg canvas
 
     } else {
-      alert("нет поддержки canvas");
+      alert("нет поддержки canvas в вашем браузере");
     }
   }
 }

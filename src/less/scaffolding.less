@@ -12,9 +12,11 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
   width: 100vw;
   height: 100vh;
+  background-color: #03010a;
+  background-image: radial-gradient(circle at 50% 99%, #151531, #03010a);
 }
 
 .bg_block {
@@ -24,55 +26,44 @@ img {
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-color: #03010a;
-  background-image: radial-gradient(circle at 50% 99%, #151531, #03010a);
-  // адаптировать под размеры
-  background-image: url("../img/cloud@575.png"), url("../img/grass@575.png"), radial-gradient(circle at 50% 99%, #151531, #03010a);
+  
+  background-image: url("../img/cloud@575.png"), url("../img/grass@575.png");
   background-position:
     center -25px,
-    center bottom,
     center bottom;
   background-size:
     990px auto,
-    575px auto,
-    cover;
-  background-repeat: repeat-x, no-repeat no-repeat;
+    575px auto;
+  background-repeat: repeat-x, no-repeat;
 
   @media (min-width: @min-sm) {
-    background-image: url("../img/cloud@990.png"), url("../img/grass@990.png"), radial-gradient(circle at 50% 99%, #151531, #03010a);
+    background-image: url("../img/cloud@990.png"), url("../img/grass@990.png");
   background-position:
     center -50px,
-    center bottom,
     center bottom;
   background-size:
     990px auto,
-    990px auto,
-    cover;
-  background-repeat: repeat-x, no-repeat no-repeat;
+    990px auto;
+  background-repeat: repeat-x, no-repeat;
   }
 
   @media (min-width: @min-lg) {
-    background-image: url("../img/cloud@1920.png"), url("../img/grass@1920.png"), radial-gradient(circle at 50% 99%, #151531, #03010a);
+    background-image: url("../img/cloud@1920.png"), url("../img/grass@1920.png");
   background-position:
     center -50px,
-    center bottom,
     center bottom;
   background-size:
     1200px auto,
-    1200px auto,
-    cover;
-  background-repeat: repeat-x, no-repeat no-repeat;
+    1200px auto;
+  background-repeat: repeat-x, no-repeat;
   }
 
   @media (min-width: @min-xl) {
   background-size:
     1920px auto,
-    1920px auto,
-    cover;
+    1920px auto;
     background-position:
     center -150px,
-    center bottom,
     center bottom;
   }
-  // \адаптировать под размеры
 }
