@@ -1,5 +1,8 @@
 
 // вызов всех функций страницы
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
+  // фон лендинга на canvas
   bg_canvas();
-};
+  // скролл по клику в меню
+  scroll();
+});
