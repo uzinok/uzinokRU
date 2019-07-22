@@ -1,0 +1,25 @@
+.menu {
+  position: relative;
+
+  & a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: @text-color-light;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.top-menu {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .menu-list {
+    display: flex;
+  }
+}

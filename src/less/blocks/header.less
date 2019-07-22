@@ -5,15 +5,27 @@ header {
   z-index: 9;
   width: 100vw;
   min-height: 100px;
-  background-image: url("../img/cloud@575.png");
-  background-position: center top;
-  background-repeat: no-repeat;
-  
-  @media (min-width: @min-sm) {
-    background-image: url("../img/cloud@990.png");
-  }
+  // background-image: url("../img/cloud@575.png");
+  // background-position: center top;
+  // background-repeat: no-repeat;
 
-  @media (min-width: @min-lg) {
-    background-image: url("../img/cloud@1250.png");
+  // @media (min-width: @min-sm) {
+  //   background-image: url("../img/cloud@990.png");
+  // }
+
+  // @media (min-width: @min-lg) {
+  //   background-image: url("../img/cloud@1250.png");
+  // }
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 6.5vw;
+
+  @media (min-width: @min-md) {
+    font-size: 50px;
   }
 }
