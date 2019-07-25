@@ -5,4 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   bg_canvas();
   // скролл по клику в меню
   scroll();
+  // подчеркивание ссылок на открытые разделы на лендинге
+  underline_top_menu();
 });

@@ -101,7 +101,7 @@ function bg_canvas() {
         resizeReset();
         // в цикле создаем звезды из расчета одна площадь 95х95
         // не сильно много всегда и не сильно мало
-        for (var i = 0; i < Math.ceil(w / 95 * h / 95); i++) {
+        for (var i = 0; i < Math.ceil(w / 195 * h / 195); i++) {
           particles.push(new Particle());
         }
         window.requestAnimationFrame(loop);
