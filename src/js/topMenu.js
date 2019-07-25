@@ -15,9 +15,9 @@ function underlineTopMenu() {
       var callback = function (entries, observer) {
         entries.forEach(entry => {
           if (entry.intersectionRatio > 0.3) {
-            document.querySelector(".top-menu [href='#" + entry.target.id + "']").classList.add("active");
+            document.querySelector(".top-menu [href='#" + entry.target.id + "']").parentElement.classList.add("active");
           } else if (entry.intersectionRatio < 0.3) {
-            document.querySelector(".top-menu [href='#" + entry.target.id + "']").classList.remove("active");
+            document.querySelector(".top-menu [href='#" + entry.target.id + "']").parentElement.classList.remove("active");
           }
         });
       };
