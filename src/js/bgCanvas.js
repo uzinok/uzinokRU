@@ -1,4 +1,4 @@
-function bg_canvas() {
+function bgCanvas() {
   if (document.querySelector('.bg_canvas--js')) {
     const canvas = document.querySelector('.bg_canvas--js');
 
@@ -8,11 +8,11 @@ function bg_canvas() {
 
       // параметры
       const OPTS = {
-        particle_color: ["rgba(204, 204, 239, 0.4)", "rgba(247, 213, 217, 0.4)", "rgba(255, 255, 255, 0.4)", "rgba(245, 249, 192, 0.4)", "rgba(241, 249, 139, 0.4)", "rgba(249, 201, 196, 0.4)", "rgba(196, 247, 249, 0.4)", "rgba(167, 248, 251, 0.4)", "rgba(249, 196, 242, 0.4)", "rgba(216, 249, 196, 0.4)"],
-        default_speed: 0.02,
-        variant_speed: 0.02,
-        default_radius: 0.6,
-        variant_radius: 0.001
+        particleColor: ["rgba(204, 204, 239, 0.4)", "rgba(247, 213, 217, 0.4)", "rgba(255, 255, 255, 0.4)", "rgba(245, 249, 192, 0.4)", "rgba(241, 249, 139, 0.4)", "rgba(249, 201, 196, 0.4)", "rgba(196, 247, 249, 0.4)", "rgba(167, 248, 251, 0.4)", "rgba(249, 196, 242, 0.4)", "rgba(216, 249, 196, 0.4)"],
+        defaultSpeed: 0.02,
+        variantSpeed: 0.02,
+        defaultRadius: 0.6,
+        variantRadius: 0.001
       }
 
       // отрисовка точки
@@ -21,16 +21,16 @@ function bg_canvas() {
         this.x = Math.random() * w;
         this.y = (Math.random() * (h - 50));
         // скорость анимации точки
-        this.speed = OPTS.default_speed + Math.random() * OPTS.variant_speed;
+        this.speed = OPTS.defaultSpeed + Math.random() * OPTS.variantSpeed;
         // для более разлиного вектора изменения радиуса
-        this.direction_angle = Math.floor(Math.random() * 360);
+        this.directionAngle = Math.floor(Math.random() * 360);
         // цвет точки
-        this.color = OPTS.particle_color[Math.ceil(Math.random() * 10)];
+        this.color = OPTS.particleColor[Math.ceil(Math.random() * 10)];
         // рандомный радиус точки
-        this.radius = OPTS.default_radius + Math.random() * OPTS.variant_radius;
+        this.radius = OPTS.defaultRadius + Math.random() * OPTS.variantRadius;
         // на сколько изменяется радиус точки 
         this.vector = {
-          radius: Math.sin(this.direction_angle) * this.speed
+          radius: Math.sin(this.directionAngle) * this.speed
         }
         // обновление радиуса
         this.update = function () {

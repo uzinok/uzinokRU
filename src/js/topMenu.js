@@ -1,16 +1,17 @@
-function underline_top_menu() {
+function underlineTopMenu() {
 
   if (document.querySelectorAll(".top_menu--js")) {
 
-    var blocks_top_menu = document.querySelectorAll(".top_menu--js");
+    var blocksTopMenu = document.querySelectorAll(".top_menu--js");
 
-    blocks_top_menu.forEach(block => {
+    blocksTopMenu.forEach(block => {
 
       var options = {
         root: null,
         rootMargin: "0px",
         threshold: 0.3
       }
+      
       var callback = function (entries, observer) {
         entries.forEach(entry => {
           if (entry.intersectionRatio > 0.3) {

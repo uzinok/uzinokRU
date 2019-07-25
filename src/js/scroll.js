@@ -11,12 +11,12 @@ function scroll() {
         e.preventDefault();
         // вызываю функцию скролла
         // передаем блок к которому будем скролить
-        go_scroll(document.querySelector(this.getAttribute("href")));
+        goScroll(document.querySelector(this.getAttribute("href")));
       })
 
     });
 
-    function go_scroll(to_block) {
+    function goScroll(to_block) {
 
       to_block.scrollIntoView({
         block: "start",
