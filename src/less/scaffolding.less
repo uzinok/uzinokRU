@@ -76,3 +76,37 @@ section {
 }
 
 // \ all class
+body {
+  overflow-x: hidden;
+}
+
+h1.main_wow {
+  animation: h1 @transition;
+}
+
+@keyframes h1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-9000px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+h2.main_wow {
+  animation: h2 2*@transition;
+}
+
+@keyframes h2 {
+  0% {
+    opacity: 0;
+    transform: translateX(9000px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
