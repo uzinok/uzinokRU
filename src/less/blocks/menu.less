@@ -2,15 +2,33 @@
   position: relative;
 
   & a {
+    position: relative;
+    display: inline-block;
     text-decoration: none;
     color: @text-color-light;
     font-size: 18px;
     transition: @transition;
+    padding: 3px 16px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      border-bottom: 2px solid @text-color-light;
+      position: absolute;
+      transition: @transition;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
   }
 
   & .menu-item.active a,
   & .menu-item a:hover {
-    text-decoration: underline;
+
+    &::after {
+      width: calc(100% - 20px);
+    }
   }
 
   & .menu-item a:focus,
@@ -33,6 +51,5 @@
   & a {
     text-transform: uppercase;
     display: inline-block;
-    padding: 0.5em 1em;
   }
 }
