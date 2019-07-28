@@ -22,6 +22,7 @@ body {
 p {
   font-weight: lighter;
 }
+
 img {
   max-width: 100%;
 }
@@ -81,9 +82,13 @@ h1 {
     font-size: 50px;
   }
 }
+
 section:first-child h2 {
-  font-size: 4.4vw;
+  @media (max-width: @min-sm) {
+    font-size: 4.4vw;
+  }
 }
+
 h2 {
   margin: 0;
   padding: 1em 0 0;

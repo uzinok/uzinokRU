@@ -21,7 +21,7 @@
     line-height: 1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: lighter;
-    font-size: 16px;
+    font-size: 15px;
     
     &::after {
       content: "";
@@ -45,11 +45,11 @@
 
     &:active,
     &:focus {
+      opacity: 0.7;
       &::after {
         transform: skewX(0);
         background-color: rgba(@text-color-light, 0.1);
         border: 1px solid rgba(@text-color-light, 0.2);
-        opacity: 0.7;
       }
     }
   }
