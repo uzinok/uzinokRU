@@ -6,9 +6,13 @@
     display: inline-block;
     text-decoration: none;
     color: @text-color-light;
-    font-size: 18px;
+    font-size: 16px;
     transition: @transition;
     padding: 3px 16px;
+
+    @media (min-width: @min-sm) {
+      font-size: 18px;
+    }
 
     &::after {
       content: "";

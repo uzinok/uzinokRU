@@ -14,11 +14,14 @@ body {
   margin: 0;
   padding: 0;
   color: aliceblue;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1.6;
   font-size: 18px;
 }
 
+p {
+  font-weight: lighter;
+}
 img {
   max-width: 100%;
 }
@@ -66,23 +69,33 @@ h1 {
   padding: 0 0 0;
   text-align: center;
   text-transform: uppercase;
-  font-size: 6.5vw;
+  font-size: 7.2vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: lighter;
+
+  @media (min-width: @min-sm) {
+    font-size: 6.5vw;
+  }
 
   @media (min-width: @min-md) {
     font-size: 50px;
   }
 }
-
+section:first-child h2 {
+  font-size: 4.4vw;
+}
 h2 {
   margin: 0;
   padding: 1em 0 0;
   text-align: center;
   text-transform: uppercase;
-  font-size: 4vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: lighter;
+  font-size: 7w;
+
+  @media (min-width: @min-sm) {
+    font-size: 4vw;
+  }
 
   @media (min-width: @min-md) {
     font-size: 31px;
