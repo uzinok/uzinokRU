@@ -1,0 +1,160 @@
+.popup-contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
+
+.popup__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 15px;
+  padding: 15px;
+  border: 2px solid #fff;
+
+  & h2 {
+    width: 100%;
+    padding: 0.5em 0;
+  }
+}
+
+.popup__input-text {
+  margin: 0 0 1.5em;
+  padding: 0.5em 0.5em 0;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  height: 2em;
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: @text-color-light;
+  border-radius: 0;
+}
+
+.popup__input-textarea {
+  overflow: hidden;
+}
+
+.popup__btn {
+  position: relative;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: transparent;
+  margin: 0 auto;
+  padding: 1em 2em;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: @text-color-light;
+    transition: @transition;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.popup__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  border: 2px solid #fff;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 49%;
+    left: 0;
+  }
+
+  &::before {
+    transform: rotate(45deg)
+  }
+
+  &::after {
+    transform: rotate(-45deg)
+  }
+}
+
+.popup-contact--dark {
+  background-color: rgba(#070613, 0.5);
+
+  .popup__form {
+    background-color: #070613;
+    border-color: rgba(@text-color-light, 0.3);
+  }
+
+  .popup__input-text {
+    border-bottom: 3px solid rgba(@text-color-light, 0.3);
+    border-left: 1px solid rgba(@text-color-light, 0.3);
+    border-right: 1px solid rgba(@text-color-light, 0.3);
+
+    &:focus,
+    &:active {
+      outline-color: @text-color-light;
+    }
+  }
+
+  .popup__btn {
+    color: @text-color-light;
+    text-transform: uppercase;
+    background-color: #151531;
+    outline-color: @text-color-light;
+
+    &:hover {
+
+      &::before,
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .popup__close {
+    border-color: rgba(@text-color-light, 0.7);
+    background-color: #070613;
+    outline-color: @text-color-light;
+
+    &::before,
+    &::after {
+      background-color: rgba(@text-color-light, 0.7);
+    }
+  }
+}
