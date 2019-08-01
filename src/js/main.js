@@ -7,4 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
   scroll();
   // подчеркивание ссылок на открытые разделы на лендинге
   underlineTopMenu();
+  // открытие и закрытие popup-contact
+  popupContact();
 });
