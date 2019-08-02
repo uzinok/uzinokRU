@@ -13,7 +13,6 @@
 body {
   margin: 0;
   padding: 0;
-  color: aliceblue;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1.6;
   font-size: 18px;
@@ -31,19 +30,23 @@ main {
   padding: 0 15px;
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1024px;
   min-height: 100vh;
 }
 
 section {
   position: relative;
-  padding: 100px 0;
+  padding: 50px 0;
   box-sizing: border-box;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: @min-md) {
+    padding: 100px 0;
+  }
 
   // &::before,
   // &::after {
@@ -136,6 +139,7 @@ h2 {
 // \ all class
 
 // анимация заголовков на первом экране
+// lend
 
 body {
   overflow-x: hidden;
@@ -180,7 +184,7 @@ button.main_wow {
 @keyframes button {
   0% {
     opacity: 0;
-    transform: translateY(9000px);
+    transform: translateY(90px);
   }
 
   100% {
@@ -190,3 +194,26 @@ button.main_wow {
 }
 
 // \анимация заголовков на первом экране
+.lending {
+  color: darken(@text-color-light, 10%);
+
+  & a {
+    display: inline-block;
+    border-bottom: 2px solid darken(@text-color-light, 20%);
+    color: darken(@text-color-light, 20%);
+    text-decoration: none;
+    transition: @transition;
+    white-space: nowrap;
+
+    &:hover {
+      opacity: 0.8;
+      border-bottom: 2px solid transparent;
+    }
+
+    &:active,
+    &:focus {
+      outline-color: rgba(@text-color-light, 0.7)
+    }
+  }
+}
+// \lend

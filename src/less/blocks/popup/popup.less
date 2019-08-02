@@ -8,6 +8,16 @@
   justify-content: center;
   align-items: center;
   z-index: 9999999;
+  animation: up_down_opacity @transition;
+}
+
+@keyframes up_down_opacity {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .popup__form {
@@ -114,11 +124,19 @@
 }
 
 .popup-contact--dark {
-  background-color: rgba(#070613, 0.5);
+  background-color: rgba(#070613, 0.9);
+  color: text-color-light;
+
+  & ::placeholder {
+    color: rgba(@text-color-light, 0.7);
+  }
 
   .popup__form {
     background-color: #070613;
     border-color: rgba(@text-color-light, 0.3);
+    & h2 {
+      color: @text-color-light;
+    }
   }
 
   .popup__input-text {
